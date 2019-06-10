@@ -1,10 +1,15 @@
-# =============================================================================
-# n = 3
+# Example
+# 3
 # This is the (first|second|third) choice.
 # This is the (first|second|third) choice.
 # This is the (first|second|third) choice.
-# print(This is the first choice.\nThis is the second choice.\nThis is the third choice.)
 #
+# Example Output
+# This is the first choice.
+# This is the second choice.
+# This is the third choice.
+#
+# Example
 # 7
 # (No choice)
 # (Empty choice|)
@@ -13,9 +18,16 @@
 # (Multi
 # line|Multi
 # line)
-# print("No choice\n\nLotsa 3\nDoes it unwrap?\nMulti\nline\n")
-# =============================================================================
+# 
+# Example Output
+# No choice
+# 
+# Lotsa 3 choices
+# Does it unwrap?
+# Multi
+# line
 
+# Input
 n = int(input())
 text = list()
 for i in range(n) :
