@@ -1,3 +1,4 @@
+# Example
 #out = "1479"
 #char = "#"
 #num = 4
@@ -6,12 +7,14 @@ out = input()
 char = input()
 num = int(input())
 
+# create pattern for all possible lines
 blank = [" "*(num+2)]
 horiz = [" " + char*num + " "]
 vertone = [char + " "*(num+1)]*num
 verttwo = [" "*(num+1) + char]*num
 bothvert = [char + " "*(num) + char]*num
 
+# set the right pattern for each number
 dic0 = list([horiz, bothvert, blank, bothvert, horiz])
 dic0 = [item for dic0 in dic0 for item in dic0]
 
@@ -42,10 +45,13 @@ dic8 = [item for dic8 in dic8 for item in dic8]
 dic9 = list([horiz, bothvert, horiz, verttwo, horiz])
 dic9 = [item for dic9 in dic9 for item in dic9]
 
+# create dictionary matching real numbers with their pattern
 dictionary = {"0":dic0, "1":dic1, "2":dic2, "3":dic3, "4":dic4, "5":dic5, "6":dic6, "7":dic7, "8":dic8, "9":dic9,}
 
+# set output list height based on 1 number height
 outList = list([""]*len(dictionary["1"]))
 
+# append all numbers
 for j in range(len(outList)) :
     for i in range(len(out)) :
         if i > 0 : 
@@ -53,6 +59,7 @@ for j in range(len(outList)) :
         else :
             outList[j] = outList[j] + dictionary[out[i]][j]
 
+# print the output
 for i in range(len(outList)) :
     if char in outList[i] :
         clean = len(outList[i]) - outList[i][::-1].index(char)
