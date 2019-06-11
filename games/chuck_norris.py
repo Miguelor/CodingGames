@@ -1,15 +1,15 @@
-# =============================================================================
-# input C
-# output 0 0 00 0000 0 00
-# =============================================================================
+# Input 
+# C
+# Output 
+# 0 0 00 0000 0I
 
+# Input and conver to binary with 7 digits
 st = input()
-
 binary = ''.join(format(ord(x), 'b').zfill(7) for x in st)
 
+# split 0 and 1 in groups
 sp_binary = list()
 for i in range(len(binary)) :
-    print(i)
     if i == 0 :
         numb = binary[i]
     else :
@@ -22,6 +22,7 @@ for i in range(len(binary)) :
     if i == len(binary)-1 :
         sp_binary.append(numb)
 
+# check if 0 or 1 and count length
 out = list()
 for i in range(len(sp_binary)) :
     if set(sp_binary[i]) == set("1") :
@@ -30,4 +31,5 @@ for i in range(len(sp_binary)) :
         out.append("00")
     out.append("0"*(len(sp_binary[i])))
     
+# print encoding
 print(" ".join(out))
