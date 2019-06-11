@@ -27,7 +27,7 @@
 # Multi
 # line
 
-# Input
+# Input lines by character with \n when needed
 n = int(input())
 text = list()
 for i in range(n) :
@@ -36,24 +36,32 @@ for i in range(n) :
         text.append(line[j])
     if i != n-1 :
         text.append("\n")
-    
+
+# isolate selections by looking for the start and end
 choices = [i for i, char in enumerate(text) if char == "("], [i for i, char in enumerate(text) if char == ")"]
 selections = list()
 
 i = 0
+# solve each choice
 for c in range(len(choices[1])) :
+    # get a list with the selections
     sel = "".join(text[choices[0][c]+1:choices[1][c]]).split("|")
     
+    # loop for the possible selections and 
+    # choose the one indicated by the number
+    # add 1 to the next choice
     ind = i
     while ind > len(sel)-1 :
         ind = abs(ind - len(sel))
     
     selections.append(sel[ind])
     i += 1
-
+    
+# replace what's inside parenthesis with the choice
+# do reverse not to change indexes
 for s in range(len(selections), 0, -1) :
     s = s-1
     text[choices[0][s]] = selections[s]
     del text[choices[0][s]+1:choices[1][s]+1]
-        
+
 print("".join(text))
