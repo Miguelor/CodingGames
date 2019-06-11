@@ -1,18 +1,21 @@
-# =============================================================================
-# expr = '2*d6*d3-(3+d3)*d5>0'
-# expr = '1+d4+1'
-# expr = 'd9-2*d4'
-# =============================================================================
+# Examples
+# 2*d6*d3-(3+d3)*d5>0
+# 1+d4+1
+# d9-2*d4
 
 import re
 
+# input and split
 expr = input()
-
 expresion = re.findall('[+-/*//()<>]|\w+', expr)
+
+# add to the expresionsList
 expresionsList = list()
 expresionsList.append(expresion)
 
-# multiply dices expresions
+# multiply dices expresions "dx"
+# remove expresion and add x new expresions with all the possible dice values
+# repeat the process until there are no more "dx" expressions
 for j in range(len(expresionsList[0])):
     if expresionsList[0][j].find('d') == 0:
         
@@ -29,10 +32,10 @@ for j in range(len(expresionsList[0])):
         for k in range(lenEval+1):
             expresionsList.remove(expresionsList[0])
 
-
 output = list()
 # evaluate parenthesis and final expression
 for ex in expresionsList:
+    # replace parenthesis with 1, 0 or result
     for i in range(len(ex)):
         
         if ex[i].find('(') == 0:
@@ -51,20 +54,25 @@ for ex in expresionsList:
             elif ev == False:
                 ev = 0
             
+            # replace parenthesis, both numbers and sign with the evaluation
             ex[i], ex[i+1], ex[i+2], ex[i+3], ex[i+4] = '0', '0', str(ev), '.0', '0'
     
+    # evaluate the expresion 
     finalEv = eval(''.join(ex))
     
+    # if the final evaluation is a boolean, then make it 1 or 0
     if finalEv == True:
         finalEv = 1
     elif finalEv == False:
         finalEv = 0
             
     output.append(int(finalEv))
-
+    
+# get all unique results and count the repetitions
 uniques = list(set(output))
 uniques.sort()
 counts = {x:output.count(x) for x in output}
 
+# print unique results with their frequency
 for i in range(len(uniques)):
     print(uniques[i], "%.2f" % round((counts[uniques[i]]/len(output))*100, 4))
