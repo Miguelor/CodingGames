@@ -1,29 +1,30 @@
-# =============================================================================
-# #Triangle
+# Example Triangle
 # n = 3
 # corners = [[0, 0], 
-# [400, 0],
-# [200, 200]]
+#            [400, 0],
+#            [200, 200]]
 # 
 # m = 5
 # shots = [[200, 100],
-# [-34, 23],
-# [75, 5],
-# [175, 174],
-# [175, 176]]
-# =============================================================================
+#          [-34, 23],
+#          [75, 5],
+#          [175, 174],
+#          [175, 176]]
 
+# Input polygon vertices
 corners = list()
 shots = list()
 n = int(input())
 for i in range(n):
     corner = input().split(' ')
     corners.append([int(corner[0]), int(corner[1])])
+# Input shots x and y position
 m = int(input())
 for i in range(m):
     shot = input().split(' ')
     shots.append([int(shot[0]), int(shot[1])])
 
+# declare create line function
 def lineFromPoints(P,Q): 
     a = Q[1] - P[1] 
     b = P[0] - Q[0]  
@@ -31,6 +32,7 @@ def lineFromPoints(P,Q):
   
     return [a, b, c]
 
+# create al lines
 lines = list()
 for i in range(n):
     if i+1 < n:
@@ -38,7 +40,9 @@ for i in range(n):
     else:
         lines.append(lineFromPoints(corners[i], corners[0]))
         
-#evaluate shots
+# evaluate shots
+# check if the point (shot) is in the correct side of the plane (diana)
+# if the point is in the right side for the n lines, then is a "hit"
 for i in range(m):
     
     ev  = list()
