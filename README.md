@@ -1,8 +1,7 @@
 [![CodinGame](/CodinGame.png)](https://www.codingame.com/ "CodinGame")
 
 <br>
-
-# CodingGames
+# CodinGames
 Contains all my working solutions in Python for puzzles on https://www.codingame.com/.
 
 ## Completed Puzzles List
