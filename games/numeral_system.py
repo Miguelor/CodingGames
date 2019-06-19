@@ -1,5 +1,7 @@
+# Example
+# 52+38=101
+
 equality = input()
-equality = "52+38=101"
 
 x = equality.split("+",1)[0]
 y = equality.split("=",1)[0].split("+",1)[1]
