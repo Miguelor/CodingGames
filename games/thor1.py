@@ -1,8 +1,11 @@
+# Input light and initial positions
 lx, ly, tx, ty = [int(i) for i in input().split()]
 
+# get difference between both axis
 x = tx - lx
 y = ty - ly
-    
+
+# check the difference sign to assign the direction
 while True:
     #remaining_turns = int(input())
     xa, ya = "", ""
