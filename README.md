@@ -30,6 +30,7 @@ Contains all my working solutions in Python for puzzles on https://www.codingame
 | [FACTORIAL VS EXPONENTIAL](https://www.codingame.com/training/medium/factorial-vs-exponential) | [Python](https://github.com/Miguelor/CodingGames/blob/master/games/factorial_vs_exponential.py) | Medium |
 | [GRAVITY](https://www.codingame.com/training/medium/gravity) | [Python](https://github.com/Miguelor/CodingGames/blob/master/games/gravity.py) | Medium |
 | [ISBN CHECK DIGIT](https://www.codingame.com/training/easy/isbn-check-digit) | [Python](https://github.com/Miguelor/CodingGames/blob/master/games/ISBN_Check_digit.py) | Easy |
+| [JACK SILVER: THE CASINO](https://www.codingame.com/ide/puzzle/jack-silver-the-casino) | [Python](https://github.com/Miguelor/CodingGames/blob/master/games/jack_silver_the_casino.py) | Easy |
 | [LOCKED IN GEAR](https://www.codingame.com/training/medium/locked-in-gear) | [Python](https://github.com/Miguelor/CodingGames/blob/master/games/locked_in_gear.py) | Medium |
 | [LUMEN](https://www.codingame.com/training/easy/lumen) | [Python](https://github.com/Miguelor/CodingGames/blob/master/games/lumen.py) | Easy |
 | [MAGIC SQUARE](https://www.codingame.com/training/medium/magic-square) | [Python](https://github.com/Miguelor/CodingGames/blob/master/games/magic_square.py) | Medium |
