@@ -1,9 +1,15 @@
+# Example
+# Input
+# face_1 = "L"
+# face_2 = "B"
+# rotationsVector = ['x', 'y', "x'", 'z', y]
+# Output
+# B
+# L
+
 rotations = input()
 face_1 = input()
 face_2 = input()
-#face_1 = "F"
-#face_2 = "B"
-# rotationsVector = ['x', 'y', "x'", 'z', y]
 
 rotationsVector = rotations.split()
 
@@ -22,5 +28,3 @@ for rotation in rotationsVector:
 
 print(dice[newDice.index(face_1)])
 print(dice[newDice.index(face_2)])
-
-#%%
